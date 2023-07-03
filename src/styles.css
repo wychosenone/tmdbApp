@@ -1,0 +1,146 @@
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #f3f3f3;
+  height: 100vh;
+}
+
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+@media (min-width: 1024px) {
+  .movie-list {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.movie-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #ffffff;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+  position: relative;
+}
+
+.movie-card img {
+  width: 100%;
+  object-fit: cover;
+  height: 60%;
+}
+
+.movie-card h2 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  border-color: #333;
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2);
+}
+
+.page-adjust {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  padding: 1rem;
+  max-width: 1200px;
+}
+/* 
+.filter-bar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.filter-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 20%; /* Set width to 20% of the parent container */
+
+/* 
+.filter-box:hover {
+  background-color: lightgrey;
+}
+
+.filter-box > div {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.filter-container span {
+  margin-right: 10px;
+} */ */
+
+.movie-card-image {
+  height: 70%; 
+  width: 100%;
+  object-fit: cover;
+}
+
+.movie-card-image {
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-start; 
+  justify-content: center;
+  width: 100%;
+}
+
+.movie-card-image img {
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+}
+
+h2,
+.Rating {
+  margin: 0; }
+
+
+
+@media (max-width: 768px) {
+  .movie-list {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+
+  .movie-card img {
+    height: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-list {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.5rem;
+  }
+
+  .movie-card img {
+    height: 40%;
+  }
+}
+
