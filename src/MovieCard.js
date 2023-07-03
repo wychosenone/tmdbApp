@@ -229,6 +229,8 @@ import Rating from "./Rating";
 import { Select, MenuItem, Button, Box, IconButton } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import Pagination from '@mui/material/Pagination';
+
 
 export const MovieCard = ({ movies }) => {
   const {
@@ -240,7 +242,7 @@ export const MovieCard = ({ movies }) => {
     handleClickCard,
     handleToggleFavorite,
     isMovieLiked,
-    errorMessage,
+    errorMessage
   } = useContext(MovieContext);
   const moviesPerPage = 20;
   const totalPages = Math.ceil(movies && movies.length / moviesPerPage);
@@ -298,7 +300,7 @@ export const MovieCard = ({ movies }) => {
                 ? "⬇️"
                 : null}
             </Button>
-            {errorMessage? <span>{errorMessage}</span> : null}
+            {errorMessage}
           </div>
           <div className="movie-list">
             {movies.results
@@ -374,26 +376,12 @@ export const MovieCard = ({ movies }) => {
                 ))}
           </div>
           <div className="page-adjust">
-            <button
-              onClick={() =>
-                page === 1 ? setPage(page) : setPage((prev) => prev - 1)
-              }
-            >
-              last
-            </button>
-            <span>
-              {page}/{movies.total_pages ? movies.total_pages : totalPages}
-            </span>
-            <button
-              onClick={() =>
-                page === movies.total_pages
-                  ? setPage(page)
-                  : setPage((prev) => prev + 1)
-              }
-            >
-              next
-            </button>
-          </div>
+    <Pagination
+      count={movies.total_pages ? movies.total_pages : totalPages} 
+      page={page}
+      onChange={(event, value) => setPage(value)}
+    />
+  </div>
         </div>
       )}
     </div>

@@ -3,7 +3,7 @@
   font-family: sans-serif;
   text-align: center;
   background-color: #f3f3f3;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .movie-list {
@@ -62,39 +62,6 @@
   padding: 1rem;
   max-width: 1200px;
 }
-/* 
-.filter-bar {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.filter-container {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.filter-box {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  width: 20%; /* Set width to 20% of the parent container */
-
-/* 
-.filter-box:hover {
-  background-color: lightgrey;
-}
-
-.filter-box > div {
-  margin-right: 10px;
-  cursor: pointer;
-}
-
-.filter-container span {
-  margin-right: 10px;
-} */ */
 
 .movie-card-image {
   height: 70%; 
